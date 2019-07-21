@@ -1,15 +1,10 @@
 <template>
   <div class="listitem">
     <div class="list-item">
-      <label class="serial-number">{{item1.id+1}}.</label>
-      <input
-        class="check-box"
-        type="checkbox"
-        name="checkbox"
-        @click="select(item1)"
-        v-model="item1.status"
-      />
-      <span class="content" @dblclick="openEdit(item1)">{{ item1.content }}</span>
+      <label  :class="{ isSelected: item1.status}">{{item1.id+1}}.</label>
+      <input class="check-box" type="checkbox" name="checkbox"
+        @click="select(item1)" v-model="item1.status" />
+      <span :class="{ drawLine: item1.status}" @dblclick="openEdit(item1)">{{ item1.content }}</span>
       <input
         id="edit"
         class="edit"
@@ -32,12 +27,13 @@ export default {
   data() {
     return {
       editText: null,
-      editable: false
+      editable: false,
     };
   },
   methods: {
     select(item) {
       this.$emit("updateStatus", item);
+
     },
     openEdit(item) {
       this.editText = item.content;

@@ -50,3 +50,10 @@
     margin-left: 20px; 
     height: 28px;
 }
+.isSelected{
+    color: gray;
+}
+.drawLine{
+    color: gray;
+    text-decoration: line-through;
+}
