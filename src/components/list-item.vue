@@ -1,9 +1,9 @@
 <template>
   <div class="listitem">
         <div class="list-item">
-            <label class="serial-number">1.</label>
-            <input class="check-box" type="checkbox" name="checkbox">
-            <span class="content">123</span>
+            <label class="serial-number">{{item1.id+1}}.</label>
+            <input class="check-box" type="checkbox" name="checkbox" @click="check(todo)">
+            <span class="content">{{ item1.content }}</span>
         </div>
   </div>
 </template>
@@ -12,6 +12,7 @@
 export default {
   name: 'listitem',
   props: {
+    item1 : Object
   },
   data(){
 
