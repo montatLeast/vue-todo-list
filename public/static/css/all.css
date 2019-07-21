@@ -1,0 +1,48 @@
+#app{
+    position:fixed;
+    left:40%;
+    top:15%;
+}
+#intro{
+    font-style: italic;
+    font-size: 18px;
+}
+
+#input_item{
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 380px;
+    height: 28px;
+}
+#button_add{
+    width: 70px;
+    height: 40px;
+    border-radius:8px;
+    border-color: white;
+    background: rgb(250, 150, 150);
+    color:white;
+    font-size: 20px;
+}
+.todolist{
+    margin-top: 20px;
+}
+.listitem{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 30px;
+    font-size: 20px;
+}
+.check-box{
+    width: 20px;
+    height: 20px;
+}
+.buttons{
+    text-align: center;
+}
+.seletor{
+    margin: 15px;
+    color: rgb(250, 150, 150);
+    border: none;
+    background: white;
+    font-size: 20px;
+}
