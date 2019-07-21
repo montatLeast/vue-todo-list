@@ -22,35 +22,35 @@ export default {
   },
   data() {
     return {
-      nextItem: '',
-      items_show:[],
-      items_all:[],
-      nextItemId:0
+      nextItem: "",
+      items_show: [],
+      items_all: [],
+      nextItemId: 0
     };
   },
   methods: {
-    addNewItem(){
+    addNewItem() {
       let item = {
-        id : this.nextItemId++,
-        content : this.nextItem,
-        status : false,
-      }
+        id: this.nextItemId++,
+        content: this.nextItem,
+        status: false
+      };
       this.items_show.push(item);
       this.items_all.push(item);
     },
-      getAll(){
+    getAll() {
       this.items_show = this.items_all;
-      },
-      getActive(){
-       this.items_show = this.items_all.filter(i=>i.status === false);
-      },
-      getComplete(){
-       this.items_show = this.items_all.filter(i=>i.status === true);
-      },
-      updateState(item){
-        let i_selected = this.todos1.filter(i=>i.id === item.id)[0];
-        i_selected.status = true;
-      }
+    },
+    getActive() {
+      this.items_show = this.items_all.filter(i => i.status === false);
+    },
+    getComplete() {
+      this.items_show = this.items_all.filter(i => i.status === true);
+    },
+    updateState(item) {
+      let i_selected = this.todos1.filter(i => i.id === item.id)[0];
+      i_selected.status = true;
+    }
   }
 };
 </script>
