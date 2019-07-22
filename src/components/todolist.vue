@@ -3,7 +3,7 @@
     <input id="input_item" type="text" v-model="nextItem" />
     <button id="button_add" @click="addNewItem">Add</button>
 
-    <div is="listitem" v-for="(item,index) in items_show" v-bind:key="index" v-bind:item1="item"></div>
+    <div is="listitem" v-for="(item,index) in items_show" v-bind:key="index" v-bind:item1="item" v-bind:idx="index"></div>
 
     <div class="buttons">
       <button class="selector" @click="getAll">ALL</button>
@@ -39,7 +39,7 @@ export default {
       this.items_all.push(item);
     },
     getAll() {
-      this.items_show = this.items_all;
+      this.items_show = Array.from(this.items_all);
     },
     getActive() {
       this.items_show = this.items_all.filter(i => i.status === false);
@@ -48,7 +48,7 @@ export default {
       this.items_show = this.items_all.filter(i => i.status === true);
     },
     updateState(item) {
-      let i_selected = this.items_all.filter(i => i.id === item.id)[0];
+      let i_selected = this.items_all.find(i => i.id === item.id);
       i_selected.status = true;
     }
   }

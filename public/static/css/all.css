@@ -29,6 +29,7 @@
 .listitem{
     margin-top: 20px;
     margin-left: 20px;
+    width: 380px;
     height: 30px;
     font-size: 20px;
 }
@@ -56,4 +57,13 @@
 .drawLine{
     color: gray;
     text-decoration: line-through;
+}
+.delete{
+    float:right;
+    width: 30px;
+    height: 30px;
+    background-color:transparent;
+    border-style:none;
+    font-size: 30px;
+    color: pink;
 }
