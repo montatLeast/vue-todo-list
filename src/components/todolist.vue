@@ -48,7 +48,7 @@ export default {
       this.items_show = this.items_all.filter(i => i.status === true);
     },
     updateState(item) {
-      let i_selected = this.todos1.filter(i => i.id === item.id)[0];
+      let i_selected = this.items_all.filter(i => i.id === item.id)[0];
       i_selected.status = true;
     }
   }
