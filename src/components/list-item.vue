@@ -5,13 +5,8 @@
       <input class="check-box" type="checkbox" name="checkbox"
         @click="select(item1)" v-model="item1.status" />
       <span :class="{ drawLine: item1.status}" @dblclick="openEdit(item1)">{{ item1.content }}</span>
-      <input
-        id="edit"
-        class="edit"
-        v-if="editable"
-        v-model="editText"
-        @keydown.enter="finishEdit(item1)"
-      />
+      <input id="edit" class="edit" v-if="editable"
+        v-model="editText" @keydown.enter="finishEdit(item1)" />
     </div>
   </div>
 </template>
