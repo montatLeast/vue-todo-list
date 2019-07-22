@@ -49,7 +49,7 @@
 }
 #edit{
     margin-left: 20px; 
-    height: 28px;
+    height: 20px;
 }
 .isSelected{
     color: gray;
@@ -65,5 +65,12 @@
     background-color:transparent;
     border-style:none;
     font-size: 30px;
-    color: pink;
+    color: gray;
+}
+span{
+    margin-left: 20px; 
+    height: 20px;
+}
+.even{
+    background-color: pink;
 }

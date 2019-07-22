@@ -2,9 +2,9 @@
   <div class="todolist">
     <input id="input_item" type="text" v-model="nextItem" />
     <button id="button_add" @click="addNewItem">Add</button>
-
-    <div is="listitem" v-for="(item,index) in items_show" v-bind:key="index" v-bind:item1="item" v-bind:idx="index"></div>
-
+    <ol>
+    <li is="listitem" v-for="(item,index) in items_show" :class="{even : index%2==0}" v-bind:key="index" v-bind:item1="item" v-bind:idx="index"></li>
+    </ol>
     <div class="buttons">
       <button class="selector" @click="getAll">ALL</button>
       <button class="selector" @click="getActive">Active</button>
