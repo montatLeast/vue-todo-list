@@ -8,7 +8,7 @@
       <input id="edit" class="edit" v-if="editable"
         v-model="editText" @keydown.enter="finishEdit(item1)" />
         <span :class="{ drawLine: item1.status}" @dblclick="openEdit(item1)" v-else>{{ item1.content }}</span>
-      <button class="delete">×</button>
+      <button class="delete" @click="deleteSelf(item1)">×</button>
     </div>
   </div>
 </template>
@@ -31,7 +31,6 @@ export default {
   methods: {
     select(item) {
       this.$emit("updateStatus", item);
-
     },
     openEdit(item) {
       this.editText = item.content;
@@ -42,6 +41,9 @@ export default {
         item.content = this.editText;
       }
       this.editable = false;
+    },
+    deleteSelf(item){
+      this.$emit("deleteItem", item);
     }
   }
 };
