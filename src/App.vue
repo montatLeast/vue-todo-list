@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <h1 id="title">Vue To Do List</h1>
-    <i id="intro">Simple Todo List with adding and filter by diff status</i>
-
+   
+    <list-header></list-header>
     <todolist></todolist>
+    <list-footer></list-footer>
   </div>
 </template>
 
 <script>
 import todolist from './components/todolist.vue'
+import listHeader from './components/Header.vue'
+import listFooter from './components/Footer.vue'
 
 export default {
   name: 'app',
   components: {
-    todolist
+    listHeader,
+    todolist,
+    listFooter
   }
 }
 </script>

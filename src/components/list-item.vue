@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     select(item) {
-      this.$emit("updateStatus", item);
+      this.$store.commit("updateStatus", item);
     },
     openEdit(item) {
       this.editText = item.content;
@@ -43,7 +43,7 @@ export default {
       this.editable = false;
     },
     deleteSelf(item){
-      this.$emit("deleteItem", item);
+      this.$store.commit("deleteItem", item);
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="footera">
+  <div class="listFooter">
     <div class="buttons">
       <button class="selector" @click="getState('All')">ALL</button>
       <button class="selector" @click="getState('Active')">Active</button>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "footera",
+  name: "listFooter",
   data() {
     return {
         
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getState(msg) {
-      this.$emit("getItemByState", msg);
+      this.$store.commit("showByItemStatus", msg);
     }
   }
 };
