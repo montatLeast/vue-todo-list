@@ -1,7 +1,10 @@
 #app{
-    position:fixed;
-    left:40%;
-    top:15%;
+
+    background: rgb(240, 240, 240);
+    min-width: 300px;
+    max-width: 600px;
+    margin:auto;
+
 }
 #intro{
     font-style: italic;
@@ -28,7 +31,6 @@
 }
 .listitem{
     margin-top: 20px;
-    margin-left: 20px;
     width: 380px;
     height: 30px;
     font-size: 20px;
