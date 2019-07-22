@@ -29,7 +29,7 @@ export default new Vuex.Store({
                 state.items_show = state.items_all.filter(i => i.status === true);
             }
         },
-        updateState(state, item) {
+        updateStatus(state, item) {
             let i_selected = state.items_all.find(i => i.id === item.id);
             i_selected.status = true;
         }
