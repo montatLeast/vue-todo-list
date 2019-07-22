@@ -1,43 +1,52 @@
 <template>
   <div class="todolist">
-    <input id="input_item" type="text" v-model="nextItem" />
-    <button id="button_add" @click="addNewItem">Add</button>
+    <headera @addItem="addItem"></headera>
     <ol>
     <li is="listitem" v-for="(item,index) in items_show" :class="{even : index%2==0}" 
     v-bind:key="index" v-bind:item1="item" v-bind:idx="index" @deleteItem="deleteItem"></li>
     </ol>
-    <div class="buttons">
-      <button class="selector" @click="getAll">ALL</button>
-      <button class="selector" @click="getActive">Active</button>
-      <button class="selector" @click="getComplete">Complete</button>
-    </div>
+    <footera @getItemByState="getItemByState"></footera>
+
   </div>
 </template>
 
 <script>
 import listitem from "./list-item.vue";
+import footera from "./footera.vue"
+import headera from "./headera.vue"
+
 export default {
   name: "todolist",
   components: {
-    listitem
+    listitem,
+    footera,
+    headera,
   },
   data() {
     return {
-      nextItem: "",
       items_show: [],
       items_all: [],
       nextItemId: 0
     };
   },
   methods: {
-    addNewItem() {
+    addItem(nextItem) {
       let item = {
         id: this.nextItemId++,
-        content: this.nextItem,
+        content: nextItem,
         status: false
       };
       this.items_show.push(item);
       this.items_all.push(item);
+    },
+    getItemByState(msg){
+      if(msg==="All"){
+        this.getAll();
+      }else if(msg==="Active"){
+        this.getActive();
+      }else{
+        this.getComplete();
+      }
     },
     getAll() {
       this.items_show = Array.from(this.items_all);
