@@ -2,8 +2,7 @@
   <div class="listitem">
     <div class="list-item">
       <label  :class="{ isSelected: item1.status}"> {{idx + 1}}.</label>
-      <input class="check-box" type="checkbox" name="checkbox"
-        @click="select(item1)" v-model="item1.status" />
+      <input class="check-box" type="checkbox" name="checkbox" v-model="item1.status" />
       <!--<span :class="{ drawLine: item1.status}" @dblclick="openEdit(item1)">{{ item1.content }}</span>-->
       <input id="edit" class="edit" v-if="editable"
         v-model="editText" @keydown.enter="finishEdit(item1)" />
@@ -29,9 +28,7 @@ export default {
     };
   },
   methods: {
-    select(item) {
-      this.$store.commit("updateStatus", item);
-    },
+
     openEdit(item) {
       this.editText = item.content;
       this.editable = true;
@@ -41,9 +38,10 @@ export default {
         item.content = this.editText;
       }
       this.editable = false;
+      this.$store.dispatch("updateItem", item);
     },
     deleteSelf(item){
-      this.$store.commit("deleteItem", item);
+      this.$store.dispatch("deleteItem", item);
     }
   }
 };

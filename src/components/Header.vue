@@ -1,8 +1,8 @@
 <template>
   <div class="listHeader">
-  <div>
-    <h1 id="title">Vue To Do List</h1>
-    <i id="intro">Simple Todo List with adding and filter by diff status</i>
+    <div>
+      <h1 id="title">Vue To Do List</h1>
+      <i id="intro">Simple Todo List with adding and filter by diff status</i>
     </div>
     <input id="input_item" type="text" v-model="nextItem" />
     <button id="button_add" @click="addNewItem">Add</button>
@@ -10,16 +10,18 @@
 </template>
 
 <script>
+
+
 export default {
   name: "listHeader",
   data() {
     return {
-        nextItem : "",
+      nextItem: ""
     };
   },
   methods: {
     addNewItem() {
-      this.$store.commit("addItem", this.nextItem);
+      this.$store.dispatch("addItem", this.nextItem);
     }
   }
 };
