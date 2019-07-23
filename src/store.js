@@ -72,7 +72,7 @@ export default new Vuex.Store({
             axios.put('http://5d36511286300e0014b64155.mockapi.io/todos/items/'+ item.id, item)
                 .then(function (response) {
                     window.console.log(response);
-                    context.commit('updateStatus', response.data);
+                    context.commit('updateItem', response.data);
                 })
                 .catch(function (error) {
                     window.console.log(error);
